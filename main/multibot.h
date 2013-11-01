@@ -37,7 +37,7 @@ void multi_send_claim_robot(objnum_t objnum);
 void multi_send_robot_explode(objnum_t,objnum_t,char);
 void multi_send_create_robot(int robotcen, objnum_t objnum, int type);
 void multi_send_boss_actions(objnum_t bossobjnum, int action, int secondary);
-static inline void multi_send_boss_teleport_action(objnum_t bossobjnum, segnum_t seg)
+static inline void multi_send_boss_teleport_action(objnum_t bossobjnum, unsigned seg)
 {
 	multi_send_boss_actions(bossobjnum, 1, seg);
 }

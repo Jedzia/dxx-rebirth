@@ -1881,7 +1881,7 @@ void teleport_boss(dxxobject *objp)
 
 #ifdef NETWORK
 	if (Game_mode & GM_MULTI)
-		multi_send_boss_teleport_action(objp-Objects, rand_segnum);
+		multi_send_boss_teleport_action(objp-Objects, rand_index);
 #endif
 
 	compute_segment_center(&objp->pos, &Segments[rand_segnum]);
