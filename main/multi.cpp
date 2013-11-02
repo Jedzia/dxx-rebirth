@@ -4489,10 +4489,12 @@ static void multi_do_drop_flag (char *buf)
 
 	objnum = spit_powerup(objp, powerup_id, seed);
 
-	map_objnum_local_to_remote(objnum, remote_objnum, pnum);
 
 	if (objnum!=object_none)
+	{
+		map_objnum_local_to_remote(objnum, remote_objnum, pnum);
 		Objects[objnum].ctype.powerup_info.count = ammo;
+	}
 
 	if (!(Game_mode & GM_HOARD))
 	{
