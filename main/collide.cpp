@@ -2038,7 +2038,10 @@ void apply_damage_to_player(dxxobject *playerobj, dxxobject *killer, fix damage,
 
 		if (Players[Player_num].shields < 0)	{
 
-  			Players[Player_num].killer_objnum = killer-Objects;
+			if (killer)
+				Players[Player_num].killer_objnum = killer-Objects;
+			else
+				Players[Player_num].killer_objnum = object_none;
 
 //			if ( killer && (killer->type == OBJ_PLAYER))
 //				Players[Player_num].killer_objnum = killer-Objects;
